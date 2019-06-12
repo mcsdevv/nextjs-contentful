@@ -11,26 +11,15 @@ module.exports = async (req, res) => {
   res.end(JSON.stringify([...posts]));
 };
 
-function fetchContentTypes() {
-  return client
-    .getContentTypes()
-    .then(response => response.items)
-    .catch(error => {
-      console.log('Error occurred while fetching Content Types');
-      console.error(error);
-    });
+async function fetchContentTypes() {
+  const types = await client.getContentTypes();
+  if (types.items) return types.items;
+  console.log('Error getting Content Types.');
 }
 
-function fetchEntriesForContentType(contentType) {
-  return client
-    .getEntries({
-      content_type: contentType.sys.id
-    })
-    .then(response => response.items)
-    .catch(error => {
-      console.log(
-        `Error occurred while fetching Entries for ${contentType.name}:`
-      );
-      console.error(error);
-    });
+async function fetchEntriesForContentType(contentType) {
+  const entries = await client.getEntries({ content_type: contentType.sys.id });
+  if (entries.items) return entries.items;
+  console.log(`Error getting Entries for ${contentType.name}`);
+  console.error(error);
 }
