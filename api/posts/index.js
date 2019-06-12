@@ -11,7 +11,6 @@ module.exports = async (req, res) => {
   res.end(JSON.stringify([...posts]));
 };
 
-// Load all Content Types in your space from Contentful
 function fetchContentTypes() {
   return client
     .getContentTypes()
@@ -22,7 +21,6 @@ function fetchContentTypes() {
     });
 }
 
-// Load all entries for a given Content Type from Contentful
 function fetchEntriesForContentType(contentType) {
   return client
     .getEntries({
