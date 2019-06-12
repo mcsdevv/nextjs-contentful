@@ -11,6 +11,7 @@ function HomePage() {
     }
     getPosts();
   }, []);
+  console.log(posts);
   return (
     <>
       <Head>
@@ -25,8 +26,15 @@ function HomePage() {
       <h2>
         Have we got any posts?{' '}
         {posts.length > 0
-          ? posts.map(p => <p>{p.fields.initialPost}</p>)
-          : 'nope'}
+          ? posts.map(p => {
+              return (
+                <div>
+                  <h2>{p.fields.content}</h2>
+                  <p>{p.fields.time}</p>
+                </div>
+              );
+            })
+          : 'No posts!'}
       </h2>
     </>
   );
