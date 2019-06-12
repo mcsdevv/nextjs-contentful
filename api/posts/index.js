@@ -21,5 +21,4 @@ async function fetchEntriesForContentType(contentType) {
   const entries = await client.getEntries({ content_type: contentType.sys.id });
   if (entries.items) return entries.items;
   console.log(`Error getting Entries for ${contentType.name}`);
-  console.error(error);
 }
