@@ -8,7 +8,6 @@ const client = contentful.createClient({
 module.exports = async (req, res) => {
   const contentTypes = await fetchContentTypes();
   const posts = await fetchEntriesForContentType(contentTypes[0]);
-
   res.end(JSON.stringify([...posts]));
 };
 
@@ -32,11 +31,7 @@ function fetchEntriesForContentType(contentType) {
     .then(response => response.items)
     .catch(error => {
       console.log(
-        chalk.red(
-          `\nError occurred while fetching Entries for ${chalk.cyan(
-            contentType.name
-          )}:`
-        )
+        `\nError occurred while fetching Entries for ${contentType.name}:`
       );
       console.error(error);
     });
