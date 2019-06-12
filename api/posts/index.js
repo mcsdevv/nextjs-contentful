@@ -31,7 +31,7 @@ function fetchEntriesForContentType(contentType) {
     .then(response => response.items)
     .catch(error => {
       console.log(
-        `\nError occurred while fetching Entries for ${contentType.name}:`
+        `Error occurred while fetching Entries for ${contentType.name}:`
       );
       console.error(error);
     });
