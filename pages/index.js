@@ -54,7 +54,7 @@ function HomePage() {
               alt={p.fields.alt}
               date={p.fields.date}
               key={p.fields.title}
-              image={p.fields.image.fields.file.url}
+              image={p.fields.image}
               title={p.fields.title}
             />
           ))
