@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Post from '../components/post';
 
 const client = require('contentful').createClient({
   space: process.env.SPACE_ID,
@@ -28,6 +29,7 @@ function HomePage() {
     }
     getPosts();
   }, []);
+  console.log(posts);
   return (
     <>
       <Head>
@@ -38,20 +40,25 @@ function HomePage() {
           type="text/css"
         />
       </Head>
-      <h1>Next.js + Contentful</h1>
-      <h2>
-        Have we got any posts?{' '}
-        {posts.length > 0
-          ? posts.map(p => {
-              return (
-                <div>
-                  <h2>{p.fields.content}</h2>
-                  <p>{p.fields.time}</p>
-                </div>
-              );
-            })
-          : 'No posts!'}
-      </h2>
+      <header>
+        <div>
+          <img src="/icons/next.svg" />
+          <img src="/icons/contentful.svg" />
+        </div>
+        <h1>Next.js + Contentful</h1>
+      </header>
+      <hr />
+      {posts.length > 0
+        ? posts.map(p => (
+            <Post
+              alt={p.fields.alt}
+              date={p.fields.date}
+              key={p.fields.title}
+              image={p.fields.image.fields.file.url}
+              title={p.fields.title}
+            />
+          ))
+        : null}
     </>
   );
 }
