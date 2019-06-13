@@ -1,10 +1,7 @@
 {
   "version": 2,
   "name": "nextjs-contentful",
-  "builds": [
-    { "src": "api/**/*.js", "use": "@now/node" },
-    { "src": "next.config.js", "use": "@now/next" }
-  ],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "env": {
     "SPACE_ID": "@space_id",
     "ACCESS_TOKEN": "@access_token"
