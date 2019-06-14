@@ -56,9 +56,22 @@ function HomePage() {
               key={p.fields.title}
               image={p.fields.image}
               title={p.fields.title}
+              url={p.fields.url}
             />
           ))
         : null}
+      <style jsx>{`
+        header {
+          height: 152px;
+          margin-top: 48px;
+        }
+        img {
+          margin-right: 8px;
+        }
+        hr {
+          margin 48px 0;
+        }
+      `}</style>
     </>
   );
 }
