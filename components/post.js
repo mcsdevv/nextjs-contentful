@@ -11,8 +11,8 @@ function Post({ alt, date, image, title, url }) {
       <style jsx>{`
         .container {
           cursor: pointer;
-          height: 453px;
           margin-bottom: 48px;
+          max-height: 453px;
         }
         a {
           border-bottom: none;
@@ -35,6 +35,17 @@ function Post({ alt, date, image, title, url }) {
           font-size: 16px;
           font-weight: 500;
           margin-top: 8px;
+        }
+        @media screen and (max-width: 360px) {
+          .text {
+            margin-top: -8em;
+          }
+          h2 {
+            font-size: 16px;
+          }
+          h4 {
+            font-size: 12px;
+          }
         }
       `}</style>
     </div>

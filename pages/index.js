@@ -62,14 +62,22 @@ function HomePage() {
         : null}
       <style jsx>{`
         header {
-          height: 152px;
-          margin-top: 48px;
+          height: 9.5em;
+          margin-top: 3em;
         }
         img {
           margin-right: 8px;
         }
         hr {
           margin 48px 0;
+        }
+        @media screen and (max-width: 360px) {
+          header {
+            height: 6em;
+          }
+          h1 {
+            font-size: 28px;
+          }
         }
       `}</style>
     </>
