@@ -8,14 +8,5 @@
       "SPACE_ID": "@space_id",
       "ACCESS_TOKEN": "@access_token"
     }
-  },
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/",
-      "headers": {
-        "cache-control": "s-maxage=300 maxage=0,stale-white-revalidate"
-      }
-    }
-  ]
+  }
 }

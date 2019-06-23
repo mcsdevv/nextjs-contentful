@@ -29,7 +29,6 @@ function HomePage() {
     }
     getPosts();
   }, []);
-  console.log(posts);
   return (
     <>
       <Head>
