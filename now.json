@@ -1,12 +1,11 @@
 {
   "version": 2,
   "name": "nextjs-contentful",
-  "alias": "nextjs-contentful.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "build": {
     "env": {
-      "SPACE_ID": "@space_id",
-      "ACCESS_TOKEN": "@access_token"
+      "SPACE_ID": "@contentful_space_id",
+      "ACCESS_TOKEN": "@contentful_access_token"
     }
   }
 }
